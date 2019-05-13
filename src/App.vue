@@ -27,7 +27,11 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Lato|Nunito');
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+
+#app {
+  font-family: 'Rubik', sans-serif;
+}
 </style>
 
 

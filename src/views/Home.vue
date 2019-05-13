@@ -26,8 +26,8 @@
             <img src="../assets/clock.svg" padding>
           </div>          
           <ion-card-header>
-            <ion-card-title>Tiempo real</ion-card-title>
-            <ion-card-subtitle>Encuentra tu información médica en tiempo real y actualizada.</ion-card-subtitle>
+            <ion-card-title class="card-title">Rápido</ion-card-title>
+            <ion-card-subtitle class="card-subtitle">Sabemos que el tiempo y la marea no esperan a nadie, por ello trabajamos rápido para tí.</ion-card-subtitle>
           </ion-card-header>
         </ion-card>
 
@@ -36,8 +36,8 @@
             <img src="../assets/minimize-2.svg" padding>
           </div>          
           <ion-card-header>
-            <ion-card-title>Sistema centralizado</ion-card-title>
-            <ion-card-subtitle>Citas médicas a todas partes en un sólo lugar.</ion-card-subtitle>
+            <ion-card-title class="card-title">Sistema centralizado</ion-card-title>
+            <ion-card-subtitle class="card-subtitle">Presta y haz seguimiento de tu préstamo y deuda en un solo lugar.</ion-card-subtitle>
           </ion-card-header>
         </ion-card>
 
@@ -46,8 +46,8 @@
             <img src="../assets/user-check.svg" padding>
           </div>          
           <ion-card-header>
-            <ion-card-title>Intuitivo</ion-card-title>
-            <ion-card-subtitle>Trabajamos para hacer tu vida más fácil.</ion-card-subtitle>
+            <ion-card-title class="card-title">Intuitivo</ion-card-title>
+            <ion-card-subtitle class="card-subtitle">Trabajamos para hacer tu vida más fácil, por ello nuestra app es muy intuitiva.</ion-card-subtitle>
           </ion-card-header>
         </ion-card>
         </div>
@@ -73,13 +73,11 @@
   font-weight: 900;
   padding-bottom: 0px;
   margin-bottom: 0px;
-  font-family: "Lato", sans-serif;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 #home-button {
-  font-family: "Lato", sans-serif;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 .background {
@@ -104,6 +102,16 @@ ion-card img {
 
 #back-card-3 {
   background-color: #1a94fa;
+}
+
+.card-title {
+  font-size: 2rem;
+  font-family: 'Rubik', sans-serif;
+}
+
+.card-subtitle {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.2rem;
 }
 
 </style>
