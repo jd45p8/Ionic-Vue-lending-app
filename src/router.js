@@ -25,7 +25,19 @@ export default new IonicVueRouter({
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: () => import("./views/UserDashboard.vue")
+      component: () => import("./views/UserDashboard.vue"),
+      children: [
+        {
+          path: '/lending',
+          name:'user-lending',
+          component: () => import("./views/UserLending.vue")
+        },
+        {
+          path: '/settings',
+          name: 'user-settings',
+          component: () => import("./views/UserSettings.vue")
+        }
+      ]
     },
     {
       path: '/about',

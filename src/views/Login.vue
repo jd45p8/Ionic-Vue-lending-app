@@ -11,12 +11,12 @@
               </ion-card-header>
               <ion-card-content class="inputs">
                 <ion-item>
-                  <ion-label class="subtitle" position="default">Correo:</ion-label>
+                  <ion-label class="subtitle" position="floating">Correo</ion-label>
                   <ion-input type="email" inputmode="email" class="subtitle"
                   @ionInput="email = $event.target.value;"></ion-input>
                 </ion-item>
                 <ion-item>
-                  <ion-label class="subtitle" position="default">Contraseña:</ion-label>
+                  <ion-label class="subtitle" position="floating">Contraseña</ion-label>
                   <ion-input type="password" inputmode="password" class="subtitle"
                   @ionInput="passwd = $event.target.value;"></ion-input>
                 </ion-item>
@@ -105,7 +105,7 @@ export default {
       this.$router.push("/signup");
     },
     gotoDashboard() {
-      
+      this.$router.push("/dashboard")
     }
   }
 };
