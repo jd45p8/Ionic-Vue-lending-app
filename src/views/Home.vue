@@ -113,7 +113,6 @@ ion-card img {
   font-family: 'Rubik', sans-serif;
   font-size: 1.2rem;
 }
-
 </style>
 
 
