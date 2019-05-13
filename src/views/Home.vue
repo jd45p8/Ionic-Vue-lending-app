@@ -17,40 +17,62 @@
     </ion-header>
     <ion-content class="background">
       <div class="background">
+        <!--Logo de la aplicación-->
         <div id="logo" padding>
           <img src="../assets/logo.svg">
           <a padding>Banqy</a>
         </div>
-        <ion-card>
-          <div id="back-card-1">
-            <img src="../assets/clock.svg" padding>
-          </div>          
-          <ion-card-header>
-            <ion-card-title class="card-title">Rápido</ion-card-title>
-            <ion-card-subtitle class="card-subtitle">Sabemos que el tiempo y la marea no esperan a nadie, por ello trabajamos rápido para tí.</ion-card-subtitle>
-          </ion-card-header>
-        </ion-card>
-
-        <ion-card>
-          <div id="back-card-2">
-            <img src="../assets/minimize-2.svg" padding>
-          </div>          
-          <ion-card-header>
-            <ion-card-title class="card-title">Sistema centralizado</ion-card-title>
-            <ion-card-subtitle class="card-subtitle">Presta y haz seguimiento de tu préstamo y deuda en un solo lugar.</ion-card-subtitle>
-          </ion-card-header>
-        </ion-card>
-
-        <ion-card>
-          <div id="back-card-3">
-            <img src="../assets/user-check.svg" padding>
-          </div>          
-          <ion-card-header>
-            <ion-card-title class="card-title">Intuitivo</ion-card-title>
-            <ion-card-subtitle class="card-subtitle">Trabajamos para hacer tu vida más fácil, por ello nuestra app es muy intuitiva.</ion-card-subtitle>
-          </ion-card-header>
-        </ion-card>
+        <!--Botones de registro e incio de sesión-->
+        <ion-grid>
+          <ion-row align-items-center justify-content-center>
+            <ion-col size-xl="2" size-lg="3" size-sm="4" size-xs="6" align-self-end>
+              <ion-button expand="block" size="large" color="primary">Registrarse</ion-button>
+            </ion-col>
+            <ion-col size-xl="2" size-lg="3" size-sm="4" size-xs="6" align-self-start>
+              <ion-button expand="block" size="large" color="secondary">Entrar</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <!--Fila con las tarjetas que describen la apliación. -->
+        <ion-grid>
+          <ion-row align-items-center justify-content-center>
+            <ion-col size-xl="3" size-lg="6" size-md="6" size-sm="12" size-xs="12">
+              <ion-card>
+                <div id="back-card-1">
+                  <img src="../assets/clock.svg" padding>
+                </div>          
+                <ion-card-header>
+                  <ion-card-title class="card-title">Rápido</ion-card-title>
+                  <ion-card-subtitle class="card-subtitle">Sabemos que el tiempo y la marea no esperan a nadie, por ello trabajamos rápido para tí.</ion-card-subtitle>
+                </ion-card-header>
+              </ion-card>
+            </ion-col>
+            <ion-col size-xl="3" size-lg="6" size-md="6" size-sm="12" size-xs="12">
+              <ion-card>
+                <div id="back-card-2">
+                  <img src="../assets/minimize-2.svg" padding>
+                </div>          
+                <ion-card-header>
+                  <ion-card-title class="card-title">Centralizado</ion-card-title>
+                  <ion-card-subtitle class="card-subtitle">Presta y haz seguimiento de tu préstamo y deuda, todo desde un solo lugar. !Descomplícate!</ion-card-subtitle>
+                </ion-card-header>
+              </ion-card>
+            </ion-col>
+            <ion-col size-xl="3" size-lg="6" size-md="6" size-sm="12" size-xs="12">
+              <ion-card>
+                <div id="back-card-3">
+                  <img src="../assets/user-check.svg" padding>
+                </div>          
+                <ion-card-header>
+                  <ion-card-title class="card-title">Intuitivo</ion-card-title>
+                  <ion-card-subtitle class="card-subtitle">Trabajamos para hacer tu vida más fácil, por ello nuestra app es muy intuitiva.</ion-card-subtitle>
+                </ion-card-header>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
         </div>
+        <!--Se incluye el footer de la aplicación-->
         <foot></foot>
     </ion-content>
   </div>

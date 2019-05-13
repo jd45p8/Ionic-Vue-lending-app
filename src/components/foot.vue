@@ -9,5 +9,6 @@
 #foot{
     margin-top: 40px;
     padding-top: 5px;
+    text-align: center;
 }
 </style>
