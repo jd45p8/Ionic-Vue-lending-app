@@ -10,5 +10,6 @@
     margin-top: 40px;
     padding-top: 5px;
     text-align: center;
+    font-family: 'Rubik', sans-serif;
 }
 </style>

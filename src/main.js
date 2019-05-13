@@ -23,7 +23,14 @@ Vue.config.ignoredElements = [
   'ion-button',
   'ion-router-outlet',
   'ion-refresher-content',
-  'ion-refresher'
+  'ion-refresher',
+  'ion-grid',
+  'ion-row',
+  'ion-col',
+  'ion-button',
+  'ion-title',
+  'ion-buttons',
+  'ion-footer'
 ]
 
 new Vue({
