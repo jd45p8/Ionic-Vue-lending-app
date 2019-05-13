@@ -19,6 +19,16 @@ export default new IonicVueRouter({
       component: Home
     },
     {
+      path: '/login',
+      name: 'login',
+      component: () => import("./views/Login.vue")
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: () => import("./views/UserDashboard.vue")
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
