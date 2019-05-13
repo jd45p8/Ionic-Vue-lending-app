@@ -16,7 +16,7 @@
                 </ion-item>
 		<ion-item>
                     <ion-label position="floating">Email</ion-label>
-                    <ion-input type="email" type="email" inputmode="email"
+                    <ion-input type="email" inputmode="email"
 						@ionInput="email = $event.target.value;"></ion-input>
                 </ion-item>
 		<ion-item>
