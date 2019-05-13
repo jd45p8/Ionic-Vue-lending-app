@@ -1,89 +1,47 @@
-<template>
+﻿<template>
   <div class="ion-page">
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-button id="home-button">
-            <img src="../assets/logo.svg">
-            <ion-title>BANQY</ion-title>
-          </ion-button>
-        </ion-buttons>
-        <ion-buttons slot="end">
-          <ion-button>
-            <ion-icon slot="icon-only" name="information-circle-outline"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content class="background">
-      <ion-title id="title">
-        Crear Cuenta
-      </ion-title>
-      <form padding-right>
-        <ion-row>
-            <ion-col/>
-            <ion-col align-items-center size="9">
-                <ion-item>
-                    <ion-label position="floating">Nombre</ion-label>
-                    <ion-input></ion-input>
+    <top-bar></top-bar>
+    <ion-content>
+      <ion-grid class="login-grid">
+        <ion-row class="login-row" align-items-center justify-content-center>
+          <ion-col size-xl="4" size-lg="6" size-md="6" size-sm="7" size-xs="12">
+            <ion-card class="card">
+              <ion-card-header>
+                <ion-card-title class="card-title">Crear Cuenta</ion-card-title>
+              </ion-card-header>
+              <ion-card-content class="inputs">
+		<ion-item>
+                   <ion-label position="floating">Nombre</ion-label>
+                   <ion-input></ion-input>
                 </ion-item>
-            </ion-col>
-            <ion-col/>
-        </ion-row>
-        <ion-row>
-            <ion-col/>
-            <ion-col align-items-center size="9">
-                <ion-item>
+		<ion-item>
                     <ion-label position="floating">Email</ion-label>
-                    <ion-input type="email"></ion-input>
+                    <ion-input type="email" type="email" inputmode="email"
+						@ionInput="email = $event.target.value;"></ion-input>
                 </ion-item>
-            </ion-col>
-            <ion-col/>
-        </ion-row>
-        <ion-row>
-            <ion-col/>
-            <ion-col align-items-center size="9">
-                <ion-item>
-                    <ion-label position="floating">Usuario</ion-label>
-                    <ion-input></ion-input>
-                </ion-item>
-            </ion-col>
-            <ion-col/>
-        </ion-row>
-        <ion-row>
-            <ion-col/>
-            <ion-col align-items-center size="9">
-                <ion-item>
+		<ion-item>
                     <ion-label position="floating">Contraseña</ion-label>
-                    <ion-input type="password"></ion-input>
+                    <ion-input type="password" inputmode="password" class="subtitle"
+                  @ionInput="passwd = $event.target.value;"></ion-input>
                 </ion-item>
-            </ion-col>
-            <ion-col/>
-        </ion-row>
-        <ion-row>
-            <ion-col/>
-            <ion-col align-items-center size="9">
-                <ion-item>
+				<ion-item>
                     <ion-label position="floating">Repetir contraseña</ion-label>
                     <ion-input type="password"></ion-input>
                 </ion-item>
-            </ion-col>
-            <ion-col/>
-        </ion-row>
-        <ion-row>
-          <ion-col/>
-          <ion-col align-items-center size="5">
-            <!-- <ion-button id="button"
-              color="primary" 
-              expand="block" 
-              [disabled]="!userForm.valid" 
-              (click)="loginForm()">Crear Cuenta</ion-button> -->
-              <ion-button id="button" type="submit">Crear cuenta</ion-button>
+                <ion-grid class="buttons">
+                  <ion-row align-items-center justify-content-center>
+                    <ion-col siz="12">
+                      <ion-button size="large" expand="block" color="secondary" @click="gotoDashboard">Crear</ion-button>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
           </ion-col>
-          <ion-col/>
         </ion-row>
-      </form>
-    </ion-content>
+      </ion-grid>
+      <foot></foot>
+    </ion-content>    
   </div>
 </template>
 
@@ -134,15 +92,70 @@
   background-size: 100%;
   background-repeat: no-repeat;
 }
+ion-button {
+  font-family: "Rubik", sans-serif;
+}
+
+.card {
+  padding-top: 15px;
+}
+
+.login-grid {
+  min-height: 78vh;
+}
+
+.login-row {
+  margin-top: 8%;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Rubik", sans-serif;
+}
+
+.subtitle {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.2rem !important;
+  color: black;
+}
+
+.input {
+  width: 100%;
+  font-family: "Rubik", sans-serif;
+}
+
+.buttons {
+  margin-top: 15px;
+}
+
+.inputs {
+  margin-bottom: 5px;
+}
 
 </style>
 
 
 <script>
-// import foot from "../components/foot.vue";
+import topBar from "../components/topBar.vue";
+import foot from "../components/foot.vue";
 
 export default {
   name: "signup",
-//   components: {foot}
+  components: {
+    topBar,
+    foot
+  },
+  data() {
+    return {
+      email: "",
+      passwd: ""
+    }
+  },
+  methods: {
+    gotoDashboard() {
+      
+    }
+  }
 };
 </script>
