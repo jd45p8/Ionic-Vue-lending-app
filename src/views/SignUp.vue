@@ -10,27 +10,44 @@
                 <ion-card-title class="card-title">Crear Cuenta</ion-card-title>
               </ion-card-header>
               <ion-card-content class="inputs">
-                <form>
+                <form @submit.prevent="signUp">
                   <ion-item>
                     <ion-label position="floating">Nombre</ion-label>
-                    <ion-input required type="text"></ion-input>
+                    <ion-input
+                      required
+                      type="text"
+                      :value="nombre"
+                      @ionChange="nombre = $event.target.value"
+                    ></ion-input>
                   </ion-item>
                   <ion-item>
                     <ion-label position="floating">Email</ion-label>
-                    <ion-input required type="email"></ion-input>
+                    <ion-input
+                      required
+                      type="email"
+                      :value="correo"
+                      @ionChange="correo = $event.target.value"
+                    ></ion-input>
                   </ion-item>
                   <ion-item>
-                    <ion-label position="floating">Nombre de Usuario</ion-label>
-                    <ion-input required type="text"></ion-input>
+                    <ion-label position="floating">Cedula</ion-label>
+                    <ion-input
+                      required
+                      type="number"
+                      :value="cedula"
+                      @ionChange="cedula = $event.target.value"
+                    ></ion-input>
                   </ion-item>
                   <ion-item>
                     <ion-label position="floating">Contraseña</ion-label>
-                    <ion-input required type="password"></ion-input>
+                    <ion-input
+                      required
+                      type="password"
+                      :value="password"
+                      @ionChange="password = $event.target.value"
+                    ></ion-input>
                   </ion-item>
-                  <ion-item>
-                    <ion-label position="floating">Repetir contraseña</ion-label>
-                    <ion-input required type="password"></ion-input>
-                  </ion-item>
+
                   <ion-grid class="buttons">
                     <ion-row align-items-center justify-content-center>
                       <ion-col size="12">
@@ -101,12 +118,52 @@ ion-button {
 <script>
 import foot from "../components/foot.vue";
 import topBar from "../components/topBar.vue";
+import { users } from "../feathers";
 
 export default {
   name: "signup",
   components: {
     foot,
     topBar
+  },
+
+  data: () => ({
+    correo: null,
+    nombre: null,
+    password: null,
+    cedula: null
+  }),
+
+  methods: {
+    async signUp() {
+      const { correo, nombre, password, cedula } = this;
+
+      try {
+        await users.create({
+          correo,
+          nombre,
+          password,
+          cedula
+        });
+
+        this.$router.push("/login");
+      } catch (e) {
+        this.$ionic.toastController
+          .create({
+            header: "Error",
+            message: "Ocurrio un error al momento de crear la cuenta.",
+            position: "bottom",
+            buttons: [
+              {
+                text: "Ok",
+                role: "cancel",
+                handler: () => {}
+              }
+            ]
+          })
+          .then(a => a.present());
+      }
+    }
   }
 };
 </script>
