@@ -7,22 +7,43 @@
 					<ion-col size-xl="4" size-lg="6" size-md="6" size-sm="7" size-xs="12">
 						<ion-card class="card">
 							<ion-card-header>
-								<ion-card-title class="card-title">Cambiar Datos</ion-card-title>
+								<ion-card-title class="card-title">Modificar Nombre</ion-card-title>
 							</ion-card-header>
 							<ion-card-content class="inputs">
 								<ion-item>
-										<ion-label position="floating">Nombre</ion-label>
-										<ion-input></ion-input>
+									<ion-label position="floating">Nombre</ion-label>
+									<ion-input></ion-input>
 								</ion-item>
+							</ion-card-content>
+						</ion-card>
+						<ion-card class="card">
+							<ion-card-header>
+								<ion-card-title class="card-title">Modificar email</ion-card-title>
+							</ion-card-header>
+							<ion-card-content class="inputs">
 								<ion-item>
-										<ion-label position="floating">Email</ion-label>
-										<ion-input type="email" inputmode="email"
-											@ionInput="email = $event.target.value;"></ion-input>
+									<ion-label position="floating">Email</ion-label>
+									<ion-input type="email" inputmode="email"
+										@ionInput="email = $event.target.value;"></ion-input>
 								</ion-item>
+							</ion-card-content>
+						</ion-card>
+						<ion-card class="card">
+							<ion-card-header>
+								<ion-card-title class="card-title">Modificar fecha de nacimiento</ion-card-title>
+							</ion-card-header>
+							<ion-card-content class="inputs">
 								<ion-item>
 									<ion-label>Fecha de nacimiento</ion-label>
 									<ion-datetime display-format="MMM DD, YYYY" max="2001-12-31"></ion-datetime>
 								</ion-item>
+							</ion-card-content>
+						</ion-card>
+						<ion-card class="card">
+							<ion-card-header>
+								<ion-card-title class="card-title">Modificar contraseña</ion-card-title>
+							</ion-card-header>
+							<ion-card-content class="inputs">
 								<ion-item>
 										<ion-label position="floating">Contraseña</ion-label>
 										<ion-input type="password" inputmode="password" class="subtitle"
@@ -32,15 +53,17 @@
 										<ion-label position="floating">Repetir contraseña</ion-label>
 										<ion-input type="password"></ion-input>
 								</ion-item>
-								<ion-grid class="buttons">
-									<ion-row align-items-center justify-content-center>
-										<ion-col siz="12">
-											<ion-button expand="block" color="secondary" @click="gotoDashboard">Modificar</ion-button>
-										</ion-col>
-									</ion-row>
-								</ion-grid>
 							</ion-card-content>
 						</ion-card>
+						<ion-grid class="buttons">
+							<ion-row align-items-center justify-content-center>
+								<ion-col/>
+								<ion-col siz="6">
+									<ion-button expand="block" color="secondary" @click="gotoDashboard">Modificar</ion-button>
+								</ion-col>
+								<ion-col/>
+							</ion-row>
+						</ion-grid>
 					</ion-col>
 				</ion-row>
 			</ion-grid>
@@ -115,7 +138,7 @@ ion-button {
 
 .card-title {
 	text-align: center;
-	font-size: 2rem;
+	/* font-size: 2rem; */
 	font-family: "Rubik", sans-serif;
 }
 
