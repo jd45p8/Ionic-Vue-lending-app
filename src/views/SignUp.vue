@@ -137,6 +137,9 @@ ion-button {
 	margin-bottom: 5px;
 }
 
+.inputs {
+  margin-bottom: 5px;
+}
 </style>
 
 
