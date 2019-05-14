@@ -10,35 +10,127 @@
                 <ion-card-title class="card-title">Iniciar Sesión</ion-card-title>
               </ion-card-header>
               <ion-card-content class="inputs">
-                <ion-item>
-                  <ion-label class="subtitle" position="floating">Correo</ion-label>
-                  <ion-input type="email" inputmode="email" class="subtitle"
-                  @ionInput="email = $event.target.value;"></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label class="subtitle" position="floating">Contraseña</ion-label>
-                  <ion-input type="password" inputmode="password" class="subtitle"
-                  @ionInput="passwd = $event.target.value;"></ion-input>
-                </ion-item>
-                <ion-grid class="buttons">
-                  <ion-row align-items-center justify-content-center>
-                    <ion-col siz="12">
-                      <ion-button size="large" expand="block" color="secondary" @click="gotoDashboard">entrar</ion-button>
-                    </ion-col>
-                    <ion-col size="12">
-                      <ion-button size="large" expand="block" color="primary" @click="gotoSignup">registrarse</ion-button>
-                    </ion-col>
-                  </ion-row>
-                </ion-grid>
+                <form @submit.prevent="login">
+                  <ion-item>
+                    <ion-label class="subtitle" position="floating">Correo</ion-label>
+                    <ion-input
+                      class="subtitle"
+                      clear-input
+                      inputmode="email"
+                      required
+                      type="email"
+                      :value="email"
+                      @ionChange="email = $event.target.value"
+                    ></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label class="subtitle" position="floating">Contraseña</ion-label>
+                    <ion-input
+                      class="subtitle"
+                      clear-input
+                      inputmode="password"
+                      required
+                      type="password"
+                      :value="passwd"
+                      @ionChange="passwd = $event.target.value"
+                    ></ion-input>
+                  </ion-item>
+                  <ion-grid class="buttons">
+                    <ion-row align-items-center justify-content-center>
+                      <ion-col siz="12">
+                        <ion-button
+                          size="large"
+                          expand="block"
+                          color="secondary"
+                          type="submit"
+                        >entrar</ion-button>
+                      </ion-col>
+                      <ion-col size="12">
+                        <ion-button
+                          size="large"
+                          expand="block"
+                          color="primary"
+                          @click="gotoSignup"
+                        >registrarse</ion-button>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </form>
               </ion-card-content>
             </ion-card>
           </ion-col>
         </ion-row>
       </ion-grid>
       <foot></foot>
-    </ion-content>    
+    </ion-content>
   </div>
 </template>
+
+<script>
+import topBar from "../components/topBar.vue";
+import foot from "../components/foot.vue";
+
+import app from "../feathers";
+
+export default {
+  name: "login",
+  components: {
+    topBar,
+    foot
+  },
+  data() {
+    return {
+      email: "",
+      passwd: ""
+    };
+  },
+  methods: {
+    gotoSignup() {
+      this.$router.push("/signup");
+    },
+    gotoDashboard() {
+      const { to } = this.$route.query;
+
+      if (to) {
+        this.$router.push(to);
+      } else this.$router.push("/dashboard");
+    },
+
+    async login() {
+      const { email, passwd } = this;
+
+      console.log({ email, passwd });
+
+      try {
+        const user = await app.authenticate({
+          strategy: "local",
+          correo: email,
+          password: passwd
+        });
+
+        console.log({ user });
+
+        this.gotoDashboard();
+      } catch (e) {
+        this.$ionic.toastController
+          .create({
+            header: "Error",
+            message: "Por favor, verifique sus credenciales",
+            position: "bottom",
+            buttons: [
+              {
+                text: "Ok",
+                role: "cancel",
+                handler: () => {}
+              }
+            ]
+          })
+          .then(a => a.present());
+      }
+    }
+  }
+};
+</script>
 
 <style>
 ion-button {
@@ -59,7 +151,7 @@ ion-button {
 
 .card-title {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-family: "Rubik", sans-serif;
 }
 
@@ -82,32 +174,3 @@ ion-button {
   margin-bottom: 5px;
 }
 </style>
-
-
-<script>
-import topBar from "../components/topBar.vue";
-import foot from "../components/foot.vue";
-
-export default {
-  name: "login",
-  components: {
-    topBar,
-    foot
-  },
-  data() {
-    return {
-      email: "",
-      passwd: ""
-    }
-  },
-  methods: {
-    gotoSignup () {
-      this.$router.push("/signup");
-    },
-    gotoDashboard() {
-      this.$router.push("/dashboard")
-    }
-  }
-};
-</script>
-

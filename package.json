@@ -8,9 +8,15 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@feathersjs/authentication-client": "^1.0.11",
+    "@feathersjs/client": "^3.7.8",
+    "@feathersjs/feathers": "^3.3.1",
+    "@feathersjs/rest-client": "^1.4.7",
+    "@feathersjs/socketio-client": "^1.2.1",
     "@ionic/core": "^4.4.0",
     "@ionic/vue": "0.0.4",
     "core-js": "^2.6.5",
+    "socket.io-client": "^2.2.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
   },
