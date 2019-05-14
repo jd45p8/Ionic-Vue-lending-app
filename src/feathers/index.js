@@ -32,4 +32,5 @@ export let user = null;
 export const loans = app.service("loans");
 export const payments = app.service("payments");
 export const agreements = app.service("agreements");
+export const users = app.service("users");
 export default app;
