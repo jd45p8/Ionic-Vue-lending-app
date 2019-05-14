@@ -53,26 +53,18 @@ const router = new IonicVueRouter({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-<<<<<<< HEAD
       component: () =>
         import(/* webpackChunkName: "about" */ "./views/About.vue")
-=======
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
->>>>>>> dd46e168dab2a0f6ee78f71d4a924f83adf2e4be
     },
     {
       path: '/signup',
       name: 'signup',
-<<<<<<< HEAD
       component: () => import("./views/SignUp.vue")
     },
     {
       path: '/info',
       name: 'infouser',
       component: () => import("./views/InfoUser.vue")
-=======
-      component: () =>  import('./views/SignUp.vue')
->>>>>>> dd46e168dab2a0f6ee78f71d4a924f83adf2e4be
     }
   ]
 });
