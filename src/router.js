@@ -40,6 +40,11 @@ export default new IonicVueRouter({
       path: '/signup',
       name: 'signup',
       component: SignUp
+    },
+    {
+      path: '/info',
+      name: 'infouser',
+      component: () => import("./views/InfoUser.vue")
     }
   ]
 })
