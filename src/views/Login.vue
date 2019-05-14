@@ -40,7 +40,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 ion-button {
   font-family: "Rubik", sans-serif;
 }
@@ -59,7 +59,7 @@ ion-button {
 
 .card-title {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-family: "Rubik", sans-serif;
 }
 

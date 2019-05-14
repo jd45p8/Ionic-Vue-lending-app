@@ -62,7 +62,7 @@
                   <ion-card-title class="card-title">Intuitivo</ion-card-title>
                   <ion-card-subtitle
                     class="card-subtitle"
-                  >Trabajamos para hacer tu vida más fácil, por ello nuestra app es muy intuitiva.</ion-card-subtitle>
+                  >Trabajamos para hacer tu vida más fácil, por ello nuestra app es tan intuitiva que no tendrás mayores problemas.</ion-card-subtitle>
                 </ion-card-header>
               </ion-card>
             </ion-col>
@@ -85,7 +85,7 @@ ion-button {
   flex-direction: column;
 }
 #logo img {
-  height: 25vh !important;
+  height: 22vh !important;
   align-self: center;
 }
 
@@ -124,13 +124,13 @@ ion-card img {
 }
 
 .card-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: "Rubik", sans-serif;
 }
 
 .card-subtitle {
   font-family: "Rubik", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 </style>
 
