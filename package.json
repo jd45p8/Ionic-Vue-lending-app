@@ -17,6 +17,8 @@
     "@ionic/core": "^4.4.0",
     "@ionic/vue": "0.0.4",
     "core-js": "^2.6.5",
+    "express": "^4.16.4",
+    "serve-static": "^1.14.1",
     "socket.io-client": "^2.2.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
