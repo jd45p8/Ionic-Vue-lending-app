@@ -8,7 +8,7 @@
         </ion-button>
       </ion-buttons>
       <ion-buttons slot="end">
-        <ion-button>
+        <ion-button @click="gotoAbout()">
           <ion-icon slot="icon-only" name="information-circle-outline"></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -29,6 +29,9 @@ export default {
   methods: {
     gotoHome() {
       this.$router.push("/home");
+    },
+    gotoAbout() {
+      this.$router.push("/about");
     }
   }
 }

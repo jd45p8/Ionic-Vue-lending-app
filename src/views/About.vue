@@ -1,15 +1,6 @@
 <template>
   <div class="ion-page">
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-button id="home-button">
-            <img src="../assets/logo.svg">
-            <ion-title>BANQY</ion-title>
-          </ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
+    <top-bar></top-bar>
     <ion-content class="background">
       <div class="background">
         <!--Logo de la aplicación-->
@@ -98,7 +89,7 @@ ion-card img {
 }
 
 .card-title {
-  font-size: 2rem;
+  /* font-size: 1.2rem; */
   font-family: "Rubik", sans-serif;
   text-align: justify;
   text-justify: inter-word;
@@ -106,7 +97,7 @@ ion-card img {
 
 .card-subtitle {
   font-family: "Rubik", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -114,9 +105,13 @@ ion-card img {
 
 
 <script>
+  import topBar from "../components/topBar.vue";
   import foot from "../components/foot.vue";
   export default {
     name: "about",
-    components: {foot}
+    components: {
+      topBar,
+      foot
+    }
   };
 </script>
