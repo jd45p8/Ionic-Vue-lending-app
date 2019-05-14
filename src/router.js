@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import { IonicVueRouter } from '@ionic/vue'
 import Home from './views/Home.vue'
+import SignUp from './views/SignUp.vue'
 
 Vue.use(IonicVueRouter)
 
@@ -46,6 +47,16 @@ export default new IonicVueRouter({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: SignUp
+    },
+    {
+      path: '/info',
+      name: 'infouser',
+      component: () => import("./views/InfoUser.vue")
     }
   ]
 })
