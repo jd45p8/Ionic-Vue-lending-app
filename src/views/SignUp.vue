@@ -68,7 +68,7 @@ ion-button {
 }
 
 .signup-row {
-  margin-top: 8%;
+  margin-top: 5%;
 }
 
 .card-title {

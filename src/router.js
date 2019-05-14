@@ -12,8 +12,6 @@ app.on("logout", () => (logged = false));
 app.on("authenticated", () => (logged = true));
 
 const router = new IonicVueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
   routes: [
     {
       path: "/",
