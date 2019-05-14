@@ -13,31 +13,32 @@
                 <form>
                   <ion-item>
                     <ion-label position="floating">Nombre</ion-label>
-                    <ion-input></ion-input>
+                    <ion-input required type="text"></ion-input>
                   </ion-item>
                   <ion-item>
                     <ion-label position="floating">Email</ion-label>
-                    <ion-input type="email"></ion-input>
+                    <ion-input required type="email"></ion-input>
                   </ion-item>
                   <ion-item>
-                    <ion-label position="floating">Usuario</ion-label>
-                    <ion-input></ion-input>
+                    <ion-label position="floating">Nombre de Usuario</ion-label>
+                    <ion-input required type="text"></ion-input>
                   </ion-item>
                   <ion-item>
                     <ion-label position="floating">Contraseña</ion-label>
-                    <ion-input type="password"></ion-input>
+                    <ion-input required type="password"></ion-input>
                   </ion-item>
                   <ion-item>
                     <ion-label position="floating">Repetir contraseña</ion-label>
-                    <ion-input type="password"></ion-input>
+                    <ion-input required type="password"></ion-input>
                   </ion-item>
-                   <ion-grid class="buttons">
+                  <ion-grid class="buttons">
                     <ion-row align-items-center justify-content-center>
                       <ion-col size="12">
                         <ion-button
                           size="large"
                           expand="block"
                           color="primary"
+                          type="submit"
                         >Crear cuenta</ion-button>
                       </ion-col>
                     </ion-row>
