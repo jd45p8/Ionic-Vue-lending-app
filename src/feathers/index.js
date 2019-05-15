@@ -4,8 +4,8 @@ import rest from "@feathersjs/rest-client";
 import auth from "@feathersjs/authentication-client";
 import io from "socket.io-client";
 
-const socket = io("http://35.238.131.108:3030");
-const http = rest("http://35.238.131.108:3030");
+const socket = io("https://banqy-239815.appspot.com/");
+const http = rest("https://banqy-239815.appspot.com/");
 const app = feathers();
 
 app.configure(socketio(socket));
